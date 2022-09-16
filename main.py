@@ -99,7 +99,7 @@ def question_to_button(question: Question) -> InlineKeyboardButton:
     )
 
 
-def post_question(bot: Bot) -> None:
+def post_questions(bot: Bot) -> None:
     logger.info("Requesting questions...")
 
     text = random.choice(settings.MESSAGES)
@@ -127,7 +127,7 @@ def main():
 
     def task():
         try:
-            post_question(bot)
+            post_questions(bot)
         except Exception:
             logger.exception("Task failed")
 
