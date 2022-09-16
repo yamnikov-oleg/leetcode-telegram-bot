@@ -1,0 +1,8 @@
+.dockerignore
+Dockerfile
+docker-compose.example.yml
+local_settings.py
+venv/
+.gitignore
+__pycache__
+fabfile.py
