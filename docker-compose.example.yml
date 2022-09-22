@@ -3,5 +3,5 @@ services:
   leetcodebot:
     build: .
     volumes:
-      - ./local_settings.py:/app/local_settings.py:ro
+      - ./local_settings.py:/app/leetcodebot/local_settings.py:ro
     restart: always

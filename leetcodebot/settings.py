@@ -1,3 +1,7 @@
+import logging
+
+logging.basicConfig(format="%(asctime)s [%(name)s : %(levelname)s] %(message)s", level=logging.INFO)
+
 BOT_TOKEN = ""
 CHAT_ID = ""
 
@@ -13,6 +17,6 @@ def SCHEDULE(scheduler, task):
 
 
 try:
-    from local_settings import *  # noqa: F401, F403
+    from .local_settings import *  # noqa: F401, F403
 except ImportError:
     pass
