@@ -6,3 +6,4 @@ venv/
 .gitignore
 __pycache__
 fabfile.py
+*.sqlite3
