@@ -13,4 +13,4 @@ RUN pipenv install
 
 ADD . .
 
-CMD [ "pipenv", "run", "python", "./main.py" ]
+CMD [ "pipenv", "run", "python", "./main.py", "run" ]
