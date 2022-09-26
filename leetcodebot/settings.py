@@ -23,6 +23,7 @@ MESSAGES = [
 
 MESSAGE_SUBMISSION_LOAD_ERROR = "⚠️ Could not load submission <b>{id}</b>."
 MESSAGE_SUBMISSION_WRONG_QUESTION = "⚠️ Submission <b>{id}</b> belongs to a different problem."
+MESSAGE_SUBMISSION_ALREADY_SOLVED = "⚠️ Submission <b>{id}</b> refused as you have already solved that problem."
 MESSAGE_SUBMISSION_TAKEN = (
     '⚠️ Submission <b>{id}</b> was already submitted by <a href="tg://user?id={by_id}">{by_name}</a>.'
 )

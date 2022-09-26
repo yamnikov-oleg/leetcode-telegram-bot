@@ -142,6 +142,18 @@ def on_reply(update: Update, context: CallbackContext, session: Session) -> None
             error_messages.append(settings.MESSAGE_SUBMISSION_WRONG_QUESTION.format(id=submission_id))
             continue
 
+        solved_before = (
+            session.query(Solution)
+            .join(Solution.post_question)
+            .filter(Solution.user_id == user.id)
+            .filter(PostQuestion.leetcode_title_slug == question_slug)
+            .first()
+            is not None
+        )
+        if solved_before:
+            error_messages.append(settings.MESSAGE_SUBMISSION_ALREADY_SOLVED.format(id=submission_id))
+            continue
+
         old_solution = session.query(Solution).filter(Solution.leetcode_id == submission_id).first()
         if old_solution:
             error_messages.append(
