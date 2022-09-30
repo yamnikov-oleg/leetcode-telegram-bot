@@ -69,6 +69,7 @@ def post_questions(bot: Bot, session: Session) -> None:
                 [question_to_button(hard_question)],
             ],
         ),
+        disable_notification=True,
     )
 
     post = Post(message_id=str(message.message_id))
@@ -208,6 +209,7 @@ def on_reply(update: Update, context: CallbackContext, session: Session) -> None
         text="\n".join(response_text_lines),
         parse_mode="HTML",
         reply_to_message_id=update.message.message_id,
+        disable_notification=True,
     )
 
     session.commit()
